@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-class ArrayMapObject < Petstore::Category
+class ArrayMapObject
   attr_accessor :int_arr, :pet_arr, :int_map, :pet_map, :int_arr_map, :pet_arr_map, :boolean_true_arr, :boolean_false_arr
 
   def self.attribute_map
@@ -32,7 +32,7 @@ end
 
 describe 'BaseObject' do
   describe 'boolean values' do
-    let(:obj) { Petstore::Cat.new({declawed: false}) }
+    let(:obj) { ArrayMapObject.new({declawed: false}) }
 
     it 'should have values set' do
       expect(obj.declawed).not_to be_nil
