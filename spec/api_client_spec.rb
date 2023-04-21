@@ -139,8 +139,8 @@ describe YousignClient::ApiClient do
     it 'ignores nils and includes empty arrays' do
       # uncomment below to test object_to_hash for model
       api_client = YousignClient::ApiClient.new
-      _model = YousignClient::ModelName.new
-      update the model attribute below
+      _model = YousignClient::Contact.new
+      # update the model attribute below
       _model.id = 1
       # update the expected value (hash) below
       expected = {id: 1, name: '', tags: []}
