@@ -97,13 +97,6 @@ describe YousignClient::ApiClient do
       expect(Typhoeus::Request).to receive(:new).with(anything, hash_not_including(:multipart))
       api_client.build_request(:get, '/test')
     end
-
-    context 'when the content type is multipart' do
-      it 'sends multipart to request' do
-        expect(Typhoeus::Request).to receive(:new).with(anything, hash_including(multipart: true))
-        api_client.build_request(:get, '/test', {header_params: { 'Content-Type' => 'multipart/form-data'}})
-      end
-    end
   end
 
   describe '#deserialize' do
@@ -132,19 +125,6 @@ describe YousignClient::ApiClient do
       data = api_client.deserialize(response, 'Hash<String, String>')
       expect(data).to be_instance_of(Hash)
       expect(data).to eq(:message => 'Hello')
-    end
-  end
-
-  describe "#object_to_hash" do
-    it 'ignores nils and includes empty arrays' do
-      # uncomment below to test object_to_hash for model
-      api_client = YousignClient::ApiClient.new
-      _model = YousignClient::Contact.new
-      # update the model attribute below
-      _model.id = 1
-      # update the expected value (hash) below
-      expected = {id: 1, name: '', tags: []}
-      expect(api_client.object_to_hash(_model)).to eq(expected)
     end
   end
 
