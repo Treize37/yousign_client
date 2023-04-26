@@ -31,6 +31,9 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'rspec', '~> 3.6', '>= 3.6.0'
   s.add_development_dependency 'irb'
+  s.add_development_dependency 'json'
+  s.add_development_dependency 'net-http'
+  s.add_development_dependency 'uri'
 
   s.files         = `find *`.split("\n").uniq.sort.select { |f| !f.empty? }
   s.test_files    = `find spec/*`.split("\n")

@@ -47,6 +47,7 @@ module YousignClient
     #   the data deserialized from response body (could be nil), response status code and response headers.
     def call_api(http_method, path, opts = {})
       request = build_request(http_method, path, opts)
+
       response = request.run
 
       if @config.debugging
@@ -124,6 +125,7 @@ module YousignClient
 
       request = Typhoeus::Request.new(url, req_opts)
       download_file(request) if opts[:return_type] == 'File'
+
       request
     end
 
