@@ -112,12 +112,6 @@ module YousignClient
         :verbose => @config.debugging
       }
 
-      p ""
-      p "#########"
-      p "REQUEST OPTIONS"
-      p req_opts
-      p "#########"
-      p ""
       # set custom cert, if provided
       req_opts[:cainfo] = @config.ssl_ca_cert if @config.ssl_ca_cert
 
@@ -128,6 +122,16 @@ module YousignClient
           @config.logger.debug "HTTP request body param ~BEGIN~\n#{req_body}\n~END~\n"
         end
       end
+
+      p ""
+      p "#########"
+      p "REQUEST OPTIONS"
+      p req_opts
+      p "#########"
+      p "REQUEST BODY"
+      p req_body
+      p ""
+      
 
       request = Typhoeus::Request.new(url, req_opts)
       download_file(request) if opts[:return_type] == 'File'
