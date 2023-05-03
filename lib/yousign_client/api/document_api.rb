@@ -534,7 +534,7 @@ module YousignClient
       p ""
       p "form params: #{form_params}"
       p ""
-      p "body: #{body}"
+      p "post body: #{post_body}"
       p ""
       p "auth names: #{auth_names}"
       p ""
