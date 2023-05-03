@@ -526,6 +526,21 @@ module YousignClient
       return_type = opts[:return_type] || 'Document' 
 
       auth_names = opts[:auth_names] || ['bearerAuth']
+
+      p "###############################"
+      p "header params: #{header_params}"
+      p ""
+      p "query params: #{query_params}"
+      p ""
+      p "form params: #{form params}"
+      p ""
+      p "body: #{body}"
+      p ""
+      p "auth names: #{auth_names}"
+      p ""
+      p "return type: #{return_type}"
+      p "###############################"
+
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
         :query_params => query_params,

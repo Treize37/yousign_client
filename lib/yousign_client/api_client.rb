@@ -112,6 +112,12 @@ module YousignClient
         :verbose => @config.debugging
       }
 
+      p ""
+      p "#########"
+      p "REQUEST OPTIONS"
+      p req_opts
+      p "#########"
+      p ""
       # set custom cert, if provided
       req_opts[:cainfo] = @config.ssl_ca_cert if @config.ssl_ca_cert
 
