@@ -532,7 +532,7 @@ module YousignClient
       p ""
       p "query params: #{query_params}"
       p ""
-      p "form params: #{form params}"
+      p "form params: #{form_params}"
       p ""
       p "body: #{body}"
       p ""
