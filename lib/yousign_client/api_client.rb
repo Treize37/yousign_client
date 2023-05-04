@@ -123,16 +123,6 @@ module YousignClient
         end
       end
 
-      p ""
-      p "#########"
-      p "REQUEST OPTIONS"
-      p req_opts
-      p "#########"
-      p "REQUEST BODY"
-      p req_body
-      p ""
-      
-
       request = Typhoeus::Request.new(url, req_opts)
       download_file(request) if opts[:return_type] == 'File'
 
